@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var controller = require('../controllers/flavors');
 
-module.exports = function() {
+module.exports = function(db) {
+  var controller = require('../controllers/flavors')(db);
   router.route('/').get(controller.getFlavors);
   router.route('/').post(controller.addFlavor);
   router.route('/:id/edit').put(controller.editFlavor);

@@ -3,7 +3,6 @@ var bodyParser = require('body-parser');
 var requireDir = require('require-dir');
 var routes = requireDir('./routes', {camelcase: true});
 var db = require('./db');
-var static = require('./static');
 var port = 3015;
 var app = express();
 
@@ -18,9 +17,9 @@ app.use(function (req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/flavors', routes.flavors());
-app.use('/sizes', routes.sizes());
-app.use('/companies', routes.companies());
+app.use('/flavors', routes.flavors(db));
+app.use('/sizes', routes.sizes(db));
+app.use('/companies', routes.companies(db));
 
 app.get('*', function(req, res, next){
   res
