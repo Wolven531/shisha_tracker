@@ -1,12 +1,22 @@
 # Shisha Tracker
 
-User-facing API that powers the front end console.
+User-facing API that powers the frontend console.
 
 ## Quickstart
+
+TODO: Include MySQL DB setup script.
 
 ```bash
 npm install nodemon -g
 npm install
+npm start
+```
+
+## Testing
+
+```bash
+npm install grunt-cli -g
+npm test
 ```
 
 ## Documentation

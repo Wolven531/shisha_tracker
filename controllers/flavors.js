@@ -4,8 +4,11 @@ var util = require('../util');
 
 module.exports.getFlavors = function(req, res, next){
   db.get('flavors', function(flavors){
-    util.prettifyFlavors(flavors, function(pretty){
-      res.end(JSON.stringify(pretty));
+    db.get('sizes', function(sizes){
+      db.get('companies', function(companies){
+        var pretty = util.prettifyFlavors(flavors, sizes, companies);
+        res.end(JSON.stringify(pretty));
+      });
     });
   });
 };
@@ -56,8 +59,11 @@ module.exports.addFlavor = function(req, res, next){
           }
           else {
             flavor.id = result.id;
-            util.prettifyFlavors([flavor], function(pretty){
-              res.status(200).end(JSON.stringify(pretty[0]));
+            db.get('sizes', function(sizes){
+              db.get('companies', function(companies){
+                var pretty = util.prettifyFlavors([flavor], sizes, companies);
+                res.status(200).end(JSON.stringify(pretty[0]));
+              });
             });
           }
         });
