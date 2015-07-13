@@ -8,7 +8,7 @@ MySQL server
 
 ## Quickstart
 
-Ensure MySQL server is running and run the MySQL setup script from `/db`.
+Ensure MySQL server is running and run the MySQL `setup.sql` script from `/db`.
 Optionally, you can run the `sizes.sql` and `companies.sql` scripts to add default sizes and companies (respectively) to your local instance.
 
 ```bash
