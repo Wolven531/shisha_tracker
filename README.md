@@ -2,11 +2,11 @@
 
 User-facing API that powers the frontend console.
 
-## Quickstart
-
 ### Requirements
 
 MySQL server
+
+## Quickstart
 
 Ensure MySQL server is running and run the MySQL setup script from `/db`
 
