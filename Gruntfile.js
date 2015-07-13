@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     /**
      * Technically everything inside of jasmine_node is 100% useless,
      * but it is required for the plugin to run the specs properly. Also,
@@ -21,12 +22,20 @@ module.exports = function(grunt) {
         specNameMatcher: 'spec'
       }
       */
+    },
+
+    apidoc: {
+      myapp: {
+        src: 'controllers/',
+        dest: 'docs/'
+      }
     }
   });
 
-  // Load the plugin that provides the 'jasmine_node' task.
   grunt.loadNpmTasks('grunt-jasmine-node');
+  grunt.loadNpmTasks('grunt-apidoc');
 
+  grunt.registerTask('docs', ['apidoc']);
   grunt.registerTask('test', ['jasmine_node']);
   // Default task(s).
   grunt.registerTask('default', ['test']);
