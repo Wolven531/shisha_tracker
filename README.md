@@ -4,7 +4,11 @@ User-facing API that powers the frontend console.
 
 ## Quickstart
 
-TODO: Include MySQL DB setup script.
+### Requirements
+
+MySQL server
+
+Ensure MySQL serve is running and run the MySQL setup script from `/db`
 
 ```bash
 npm install nodemon -g
