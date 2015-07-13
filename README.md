@@ -26,7 +26,12 @@ npm test
 
 ## Documentation
 
-Not implemented yet.
+Available at `/` or `/docs`.
+
+```bash
+npm install grunt-apidoc -g
+npm run docs
+```
 
 ## Versions
 
