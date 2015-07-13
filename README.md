@@ -8,7 +8,7 @@ User-facing API that powers the frontend console.
 
 MySQL server
 
-Ensure MySQL serve is running and run the MySQL setup script from `/db`
+Ensure MySQL server is running and run the MySQL setup script from `/db`
 
 ```bash
 npm install nodemon -g
