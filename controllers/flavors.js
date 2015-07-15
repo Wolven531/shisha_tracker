@@ -140,8 +140,8 @@ module.exports = function (db) {
       var validationObj = flavor.validate();
       if(validationObj.errors.length === 0) {
         db.post('flavors',
-          ['name', 'size', 'company', 'cost', 'date_bought'],
-          [flavor.name, flavor.size, flavor.company, flavor.cost, flavor.date_bought],
+          ['name', 'size', 'company', 'cost', 'date_bought', 'notes'],
+          [flavor.name, flavor.size, flavor.company, flavor.cost, flavor.date_bought, flavor.notes],
           function(result){
             if(result.error) {
               res.status(400).end(JSON.stringify(result));
