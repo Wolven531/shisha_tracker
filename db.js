@@ -86,11 +86,11 @@ module.exports.post = function(table, fields, vals, cb){
   sql += ') VALUES (';
   for(var a = 0; a < vals.length; a++) {
     sql += a > 0 ? ',' : '';
-    if(!isNaN(vals[a])) {// check if this should be a number
-      sql += vals[a];
+    if(isNaN(vals[a]) || vals[a] === '') {// check if this should be a number
+      sql += '"' + vals[a] + '"';
     }
     else {
-      sql += '"' + vals[a] + '"';
+      sql += vals[a];
     }
   }
   sql += ');';
